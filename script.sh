@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: ./script.sh https://cyberdrop.me/a/nJmf3qds
+# Usage: ./script.sh <cyberdrop album's link>
 
 album_name=$(curl $1 | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
 mkdir "$album_name";
