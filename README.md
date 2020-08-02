@@ -1,6 +1,7 @@
 # Cyberdrop Downloader
 
-Cyberdrop Downloader is a script to download all images of a cyberdrop.me album written in shell script and only will work on unix like OS
+Cyberdrop Downloader is a script to download all images of a cyberdrop.me album written in shell script
+- It only will work on unix like OS
 
 ## Install
 
@@ -11,13 +12,13 @@ $ chmod +x install-dependencies.sh && sudo ./install-dependencies.sh
 
 ## How to use
 
-First give execution permisson:
-```h
-$ chmod +x ./cyberdrop-downloader
+First add exec permisson:
+```
+$ chmod +x ./cyberdrop-downloader.sh
 ```
 And run:
 ```
-$ ./cyberdrop-downloader
+$ ./cyberdrop-downloader.sh
 ```
 
 ### TODO
