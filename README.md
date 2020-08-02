@@ -6,20 +6,17 @@ Cyberdrop Downloader is a script to download all images of a cyberdrop.me album 
 
 If you dont have curl and wget installed:
 ```
-bash
 $ chmod +x install-dependencies.sh && sudo ./install-dependencies.sh
 ```
 
 ## How to use
 
 First give execution permisson:
-```
-bash
+```h
 $ chmod +x ./cyberdrop-downloader
-
 ```
 And run:
-``
+```
 bash
 $ ./cyberdrop-downloader
 ```
