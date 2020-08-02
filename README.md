@@ -17,7 +17,6 @@ $ chmod +x ./cyberdrop-downloader
 ```
 And run:
 ```
-bash
 $ ./cyberdrop-downloader
 ```
 
