@@ -7,7 +7,7 @@
 # Cyberdrop Downloader is a script to download all images of a cyberdrop.me album written in shell script
 #
 # INSTALL:
-# ./install.sh
+# sudo ./install-dependencies.sh
 #
 # USAGE:
 # ./cyberdrop-downloader.sh <cyberdrop-link>
