@@ -13,6 +13,8 @@
 # ./cyberdrop-downloader.sh <cyberdrop-link>
 
 VER='1.0';
+COLOR1='\033[91m';
+RESET='\e[0m';
 
 if [ "$1" == "" ] || [ "$1" == "-h" ]; then
     #echo '          _                _                     _                 _              _          ';
@@ -21,22 +23,22 @@ if [ "$1" == "" ] || [ "$1" == "-h" ]; then
     #echo ' \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|   ';
     #echo '     |__/                           |_|                                                      ';
     #echo '';
-    echo '+ -- --=[ Cyberdrop Downloader v'$VER 'by @hugogomess';
-    echo '+ -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>';
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
+    echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
 else
-    echo '+ -- --=[ Cyberdrop Downloader v'$VER 'by @hugogomess';
-    echo '+ -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>';
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
+    echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
     echo '';
 
-    album_name=$(curl $1 | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
-    mkdir "$album_name";
-    cd "$album_name";
+    ALBUM_NAME=$(curl "$1" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
+    mkdir "$ALBUM_NAME" && cd "$ALBUM_NAME";
 
-    curl $1 | grep 'id="file"' | cut -d '"' -f6 > links;
+    curl "$1" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
 
-    cat links | while read -r link; do
-        wget "$link";
+    cat LINKS | while read -r LINK; do
+        wget "$LINK";
     done;
+    rm LINKS;
 fi
 exit
 
