@@ -24,5 +24,6 @@ $ ./cyberdrop-downloader.sh
 ### TODO
 
 - Download multiple albums reading a txt file;
+- Fix print figlet;
 - Clean output;
 - Make a cool progress bar;
