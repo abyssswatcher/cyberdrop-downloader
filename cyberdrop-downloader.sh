@@ -12,8 +12,8 @@
 # USAGE:
 # ./cyberdrop-downloader.sh <cyberdrop-link>
 
-VER='1.0';
-COLOR1='\033[91m';
+VER='1.2';
+COLOR1='\e[94m';
 RESET='\e[0m';
 
 if [ "$1" == "" ] || [ "$1" == "-h" ]; then
@@ -34,10 +34,7 @@ else
     mkdir "$ALBUM_NAME" && cd "$ALBUM_NAME";
 
     curl "$1" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
-
-    cat LINKS | while read -r LINK; do
-        wget "$LINK";
-    done;
+    wget -i LINKS -q --show-progress;
     rm LINKS;
 fi
 exit
