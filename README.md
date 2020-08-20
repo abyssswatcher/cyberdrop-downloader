@@ -20,6 +20,10 @@ And run:
 ```
 $ ./cyberdrop-downloader.sh
 ```
+To download multiple links open `download-list` file and put your links there (One link per line) then run:
+```
+$ ./cyberdrop-downloader.sh -m
+```
 
 ### TODO
 
