@@ -1,36 +1,43 @@
 #!/bin/bash
 #
-# Cyberdrop Downloader by @hugogomess
-# https://hugogomess.github.io/
+# Cyberdrop Downloader by @0xkaneki
+# https://0xkaneki.com/
 #
 # ABOUT:
 # Cyberdrop Downloader is a script to download all images of a cyberdrop.me album written in shell script
 #
 # INSTALL:
-# sudo ./install-dependencies.sh
+# apt install curl wget -y
 #
 # USAGE:
 # ./cyberdrop-downloader.sh <cyberdrop-link>
+# Multiple Albums: ./cyberdrop-downloader.sh -m <filename>
 
-VER='1.2';
+VER='1.3';
 COLOR1='\e[94m';
 RESET='\e[0m';
 
 if [ "$1" == "" ] || [ "$1" == "-h" ]; then
-    #echo '          _                _                     _                 _              _          ';
-    #echo '  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ';
-    #echo ' / _| || | '_ \/ -_) '_/ _` | '_/ _ \ '_ \___/ _` / _ \ V  V / ' \| / _ \/ _` / _` / -_) '_| ';
-    #echo ' \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|   ';
-    #echo '     |__/                           |_|                                                      ';
-    #echo '';
-    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
+    echo -e "$COLOR1          _                _                     _                 _              _ ";   
+    echo -e "$COLOR1  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ";
+    echo -e "$COLOR1 / _| || |  _ \/ -_)  _/ _  |  _/ _ \  _ \___/ _  / _ \ V  V /   \| / _ \/ _  / _  / -_)  _| ";
+    echo -e "$COLOR1 \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|  ";
+    echo -e "$COLOR1     |__/                           |_|     ";
+    echo -e "";
+    echo -e "";
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @0xkaneki$RESET";
     echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
-    echo -e "$COLOR1 + -- --=[ Multiple Files: ./cyberdrop-downloader.sh -m$RESET";
+    echo -e "$COLOR1 + -- --=[ Multiple Albums: ./cyberdrop-downloader.sh -m <filename>$RESET";
 elif [ "$1" == "-m" ]; then
-    echo '';
-    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
-    echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
-    echo '';
+    echo -e "$COLOR1          _                _                     _                 _              _ ";   
+    echo -e "$COLOR1  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ";
+    echo -e "$COLOR1 / _| || |  _ \/ -_)  _/ _  |  _/ _ \  _ \___/ _  / _ \ V  V /   \| / _ \/ _  / _  / -_)  _| ";
+    echo -e "$COLOR1 \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|  ";
+    echo -e "$COLOR1     |__/                           |_|     ";
+    echo -e "";
+    echo -e "";
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @0xkaneki$RESET";
+    echo -e "";
 
     FILENAME=$2
     while read LINE; do
@@ -43,9 +50,15 @@ elif [ "$1" == "-m" ]; then
         cd "..";
     done < $FILENAME;
 else
-    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
-    echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
-    echo '';
+    echo -e "$COLOR1          _                _                     _                 _              _ ";   
+    echo -e "$COLOR1  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ";
+    echo -e "$COLOR1 / _| || |  _ \/ -_)  _/ _  |  _/ _ \  _ \___/ _  / _ \ V  V /   \| / _ \/ _  / _  / -_)  _| ";
+    echo -e "$COLOR1 \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|  ";
+    echo -e "$COLOR1     |__/                           |_|     ";
+    echo -e "";
+    echo -e "";
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @0xkaneki$RESET";
+    echo -e "";
 
     ALBUM_NAME=$(curl "$1" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
     mkdir "$ALBUM_NAME" && cd "$ALBUM_NAME";
@@ -53,5 +66,7 @@ else
     curl "$1" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
     wget -i LINKS -q --show-progress;
     rm LINKS;
+    cd "..";
 fi
+
 exit
