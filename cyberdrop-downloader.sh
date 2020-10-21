@@ -25,6 +25,23 @@ if [ "$1" == "" ] || [ "$1" == "-h" ]; then
     #echo '';
     echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
     echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
+    echo -e "$COLOR1 + -- --=[ Multiple Files: ./cyberdrop-downloader.sh -m$RESET";
+elif [ "$1" == "-m" ]; then
+    echo '';
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
+    echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
+    echo '';
+
+    FILENAME=$2
+    while read LINE; do
+        ALBUM_NAME=$(curl "$LINE" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
+        mkdir "$ALBUM_NAME" && cd "$ALBUM_NAME";
+
+        curl "$LINE" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
+        wget -i LINKS -q --show-progress;
+        rm LINKS;
+        cd "..";
+    done < $FILENAME;
 else
     echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
     echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
@@ -38,5 +55,3 @@ else
     rm LINKS;
 fi
 exit
-
-

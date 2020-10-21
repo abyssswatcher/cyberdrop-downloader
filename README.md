@@ -20,8 +20,11 @@ And run:
 ```
 $ ./cyberdrop-downloader.sh
 ```
+To download multiple links create a file with the links (one per line) then run:
+```
+$ ./cyberdrop-downloader.sh -m <filename>
+```
 
 ### TODO
 
-- Download multiple albums reading a txt file;
 - Fix print figlet;
