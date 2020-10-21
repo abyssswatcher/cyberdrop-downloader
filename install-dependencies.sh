@@ -9,6 +9,6 @@ echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @hugogomess$RESET";
 echo "";
 
 apt-get update;
-apt-get install -y curl wget figlet toilet;
+apt-get install -y curl wget;
 
 exit
