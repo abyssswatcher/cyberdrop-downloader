@@ -13,7 +13,7 @@
 # ./cyberdrop-downloader.sh <cyberdrop-link>
 # Multiple Albums: ./cyberdrop-downloader.sh -m <filename>
 
-VER='1.3';
+VER='1.4';
 COLOR1='\e[94m';
 RESET='\e[0m';
 
