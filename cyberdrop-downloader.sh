@@ -42,7 +42,8 @@ elif [ "$1" == "-m" ]; then
     FILENAME=$2
     while read LINE; do
         ALBUM_NAME=$(curl "$LINE" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
-        mkdir "$ALBUM_NAME" && cd "$ALBUM_NAME";
+        ALBUM_ID=$(basename "$LINE" | cut -d? -f1);
+        mkdir "$ALBUM_NAME ($ALBUM_ID)" && cd "$ALBUM_NAME ($ALBUM_ID)";
 
         curl "$LINE" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
         wget -i LINKS -q --show-progress;
@@ -61,7 +62,8 @@ else
     echo -e "";
 
     ALBUM_NAME=$(curl "$1" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
-    mkdir "$ALBUM_NAME" && cd "$ALBUM_NAME";
+    ALBUM_ID=$(basename "$1" | cut -d? -f1);
+    mkdir "$ALBUM_NAME ($ALBUM_ID)" && cd "$ALBUM_NAME ($ALBUM_ID)";
 
     curl "$1" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
     wget -i LINKS -q --show-progress;
