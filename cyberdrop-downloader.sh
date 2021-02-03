@@ -41,7 +41,7 @@ elif [ "$1" == "-m" ]; then
 
     FILENAME=$2
     while read LINE; do
-        ALBUM_NAME=$(curl "$LINE" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
+        ALBUM_NAME=$(curl "$LINE" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1 | sed 's/\//-/g');
         ALBUM_ID=$(basename "$LINE" | cut -d? -f1);
         mkdir "$ALBUM_NAME ($ALBUM_ID)" && cd "$ALBUM_NAME ($ALBUM_ID)";
 
@@ -61,7 +61,7 @@ else
     echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @0xkaneki$RESET";
     echo -e "";
 
-    ALBUM_NAME=$(curl "$1" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1);
+    ALBUM_NAME=$(curl "$1" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1 | sed 's/\//-/g');
     ALBUM_ID=$(basename "$1" | cut -d? -f1);
     mkdir "$ALBUM_NAME ($ALBUM_ID)" && cd "$ALBUM_NAME ($ALBUM_ID)";
 
