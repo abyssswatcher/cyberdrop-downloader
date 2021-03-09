@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Cyberdrop Downloader by @0xkaneki
-# https://0xkaneki.com/
+# Cyberdrop Downloader by @sukenn
+# https://sukenn.github.io/
 #
 # ABOUT:
 # Cyberdrop Downloader is a script to download all images of a cyberdrop.me album written in shell script
@@ -25,7 +25,7 @@ if [ "$1" == "" ] || [ "$1" == "-h" ]; then
     echo -e "$COLOR1     |__/                           |_|     ";
     echo -e "";
     echo -e "";
-    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @0xkaneki$RESET";
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @sukenn$RESET";
     echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
     echo -e "$COLOR1 + -- --=[ Multiple Albums: ./cyberdrop-downloader.sh -m <filename>$RESET";
 elif [ "$1" == "-m" ]; then
@@ -36,7 +36,7 @@ elif [ "$1" == "-m" ]; then
     echo -e "$COLOR1     |__/                           |_|     ";
     echo -e "";
     echo -e "";
-    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @0xkaneki$RESET";
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @sukenn$RESET";
     echo -e "";
 
     FILENAME=$2
@@ -58,7 +58,7 @@ else
     echo -e "$COLOR1     |__/                           |_|     ";
     echo -e "";
     echo -e "";
-    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @0xkaneki$RESET";
+    echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @sukenn$RESET";
     echo -e "";
 
     ALBUM_NAME=$(curl "$1" | grep 'title has-text-centered' | cut -d '"' -f6 | head -n1 | sed 's/\//-/g');
