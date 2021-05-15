@@ -1,6 +1,6 @@
 # Cyberdrop Downloader
 
-Cyberdrop Downloader is a script to download all images from a cyberdrop.me album written in shell script.
+Cyberdrop Downloader is a script to download all images and videos from a cyberdrop.me album written in shell script.
 - It only will work on unix like OS
 
 ## Usage
