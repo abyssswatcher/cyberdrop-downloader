@@ -17,25 +17,19 @@ VER='1.3.2';
 COLOR1='\e[94m';
 RESET='\e[0m';
 
+echo -e "$COLOR1          _                _                     _                 _              _ ";   
+echo -e "$COLOR1  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ";
+echo -e "$COLOR1 / _| || |  _ \/ -_)  _/ _  |  _/ _ \  _ \___/ _  / _ \ V  V /   \| / _ \/ _  / _  / -_)  _| ";
+echo -e "$COLOR1 \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|  ";
+echo -e "$COLOR1     |__/                           |_|     ";
+echo -e "";
+echo -e "";
+
 if [ "$1" == "" ] || [ "$1" == "-h" ]; then
-    echo -e "$COLOR1          _                _                     _                 _              _ ";   
-    echo -e "$COLOR1  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ";
-    echo -e "$COLOR1 / _| || |  _ \/ -_)  _/ _  |  _/ _ \  _ \___/ _  / _ \ V  V /   \| / _ \/ _  / _  / -_)  _| ";
-    echo -e "$COLOR1 \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|  ";
-    echo -e "$COLOR1     |__/                           |_|     ";
-    echo -e "";
-    echo -e "";
     echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @sukenn$RESET";
     echo -e "$COLOR1 + -- --=[ Usage: ./cyberdrop-downloader.sh <cyberdrop-link>$RESET";
     echo -e "$COLOR1 + -- --=[ Multiple Albums: ./cyberdrop-downloader.sh -m <filename>$RESET";
 elif [ "$1" == "-m" ]; then
-    echo -e "$COLOR1          _                _                     _                 _              _ ";   
-    echo -e "$COLOR1  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ";
-    echo -e "$COLOR1 / _| || |  _ \/ -_)  _/ _  |  _/ _ \  _ \___/ _  / _ \ V  V /   \| / _ \/ _  / _  / -_)  _| ";
-    echo -e "$COLOR1 \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|  ";
-    echo -e "$COLOR1     |__/                           |_|     ";
-    echo -e "";
-    echo -e "";
     echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @sukenn$RESET";
     echo -e "";
 
@@ -51,13 +45,6 @@ elif [ "$1" == "-m" ]; then
         cd "..";
     done < $FILENAME;
 else
-    echo -e "$COLOR1          _                _                     _                 _              _ ";   
-    echo -e "$COLOR1  __ _  _| |__  ___ _ _ __| |_ _ ___ _ __ ___ __| |_____ __ ___ _ | |___  __ _ __| |___ _ _  ";
-    echo -e "$COLOR1 / _| || |  _ \/ -_)  _/ _  |  _/ _ \  _ \___/ _  / _ \ V  V /   \| / _ \/ _  / _  / -_)  _| ";
-    echo -e "$COLOR1 \__|\_, |_.__/\___|_| \__,_|_| \___/ .__/   \__,_\___/\_/\_/|_||_|_\___/\__,_\__,_\___|_|  ";
-    echo -e "$COLOR1     |__/                           |_|     ";
-    echo -e "";
-    echo -e "";
     echo -e "$COLOR1 + -- --=[ Cyberdrop Downloader v$VER by @sukenn$RESET";
     echo -e "";
 
