@@ -40,7 +40,7 @@ elif [ "$1" == "-m" ]; then
         mkdir "$ALBUM_NAME ($ALBUM_ID)" && cd "$ALBUM_NAME ($ALBUM_ID)";
 
         curl "$LINE" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
-        wget -i LINKS -q --show-progress;
+        wget -i LINKS -q --show-progress -c;
         rm LINKS;
         cd "..";
     done < $FILENAME;
@@ -53,7 +53,7 @@ else
     mkdir "$ALBUM_NAME ($ALBUM_ID)" && cd "$ALBUM_NAME ($ALBUM_ID)";
 
     curl "$1" | grep 'id="file"' | cut -d '"' -f6 > LINKS;
-    wget -i LINKS -q --show-progress;
+    wget -i LINKS -q --show-progress -c;
     rm LINKS;
     cd "..";
 fi
